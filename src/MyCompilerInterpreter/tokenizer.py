@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from enum import StrEnum, auto
 from string import digits
-from typing import Any
+from typing import Any, Generator
 
 
 class TokenType(StrEnum):
@@ -48,3 +48,9 @@ class Tokenizer:
             return Token(TokenType.INT, int(char))
         else:
             raise RuntimeError(f"Can't tokenize {char!r}.")
+
+    def __iter__(self) -> Generator[Token, None, None]:
+        """Iterate over tokens."""
+        while (token := self.next_token()).type != TokenType.EOF:
+            yield token
+        yield token  # Yield the EOF token too.

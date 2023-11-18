@@ -1,10 +1,10 @@
 """Simple function."""
-from .tokenizer import Tokenizer, TokenType
+from .tokenizer import Tokenizer
 
 
 def execute(code):
     """Execute `code`."""
     print(code)
     tokenizer = Tokenizer(code)
-    while (tok := tokenizer.next_token()).type != TokenType.EOF:
+    for tok in tokenizer:
         print(f"\t{tok.type}, {tok.value}")
