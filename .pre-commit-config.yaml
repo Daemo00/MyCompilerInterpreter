@@ -12,11 +12,12 @@ repos:
     rev: 1.7.5
     hooks:
     -   id: bandit
--   repo: https://github.com/pycqa/pydocstyle
-    rev: 6.3.0
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.6
     hooks:
-    -   id: pydocstyle
-        name: Enforce docstrings
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
 -   repo: https://github.com/pycqa/docformatter
     rev: v1.7.5
     hooks:

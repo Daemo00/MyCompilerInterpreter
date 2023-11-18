@@ -8,7 +8,7 @@ def parse_args(args=None):
     """Parse arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        'code',
+        "code",
         type=str,
     )
     return parser.parse_args(args=args)
