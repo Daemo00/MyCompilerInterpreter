@@ -31,7 +31,7 @@ docs = [
 
 
 [project.scripts]
-add_number = "MyCompilerInterpreter:cli.main"
+execute = "MyCompilerInterpreter:cli.main"
 
 
 [tool.setuptools_scm]

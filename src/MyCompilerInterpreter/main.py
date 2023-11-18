@@ -1,6 +1,10 @@
 """Simple function."""
+from .tokenizer import Tokenizer, TokenType
 
 
-def add_one(number):
-    """Add 1 to `number`."""
-    return number + 1
+def execute(code):
+    """Execute `code`."""
+    print(code)
+    tokenizer = Tokenizer(code)
+    while (tok := tokenizer.next_token()).type != TokenType.EOF:
+        print(f"\t{tok.type}, {tok.value}")

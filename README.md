@@ -5,6 +5,8 @@
 
 Generated using https://github.com/Daemo00/Python-Package-Template-using-Copier.
 
+Trying https://mathspp.com/blog/building-a-python-compiler-and-interpreter.
+
 Generate the docs locally
 ----
 
