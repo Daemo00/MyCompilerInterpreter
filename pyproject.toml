@@ -44,3 +44,6 @@ requires = [
   "wheel",
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.bandit.assert_used]
+skips = ['tests/test_*.py']
