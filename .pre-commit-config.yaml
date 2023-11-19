@@ -1,13 +1,5 @@
 # See https://pre-commit.com for more information
 repos:
--   repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
-    hooks:
-    -   id: flake8
--   repo: https://github.com/PyCQA/autoflake
-    rev: v2.2.1
-    hooks:
-    -   id: autoflake
 -   repo: https://github.com/pycqa/bandit
     rev: 1.7.5
     hooks:

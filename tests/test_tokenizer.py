@@ -1,9 +1,12 @@
+"""Test the tokenizer."""
+
 import pytest
 
 from MyCompilerInterpreter.tokenizer import Token, Tokenizer, TokenType
 
 
 def test_tokenizer_addition():
+    """Test addition."""
     tokens = list(Tokenizer("3 + 5"))
     assert tokens == [
         Token(TokenType.INT, 3),
@@ -14,6 +17,7 @@ def test_tokenizer_addition():
 
 
 def test_tokenizer_subtraction():
+    """Test subtraction."""
     tokens = list(Tokenizer("3 - 6"))
     assert tokens == [
         Token(TokenType.INT, 3),
@@ -24,6 +28,7 @@ def test_tokenizer_subtraction():
 
 
 def test_tokenizer_additions_and_subtractions():
+    """Test additions and subtractions."""
     tokens = list(Tokenizer("1 + 2 + 3 + 4 - 5 - 6 + 7 - 8"))
     assert tokens == [
         Token(TokenType.INT, 1),
@@ -46,6 +51,7 @@ def test_tokenizer_additions_and_subtractions():
 
 
 def test_tokenizer_additions_and_subtractions_with_whitespace():
+    """Test additions and subtractions with spaces."""
     tokens = list(
         Tokenizer("     1+       2   +3+4-5  -   6 + 7  - 8        "),
     )
@@ -70,6 +76,7 @@ def test_tokenizer_additions_and_subtractions_with_whitespace():
 
 
 def test_tokenizer_raises_error_on_garbage():
+    """Test unexpected operator."""
     with pytest.raises(RuntimeError):
         list(Tokenizer("$"))
 
@@ -83,6 +90,7 @@ def test_tokenizer_raises_error_on_garbage():
     ],
 )
 def test_tokenizer_recognises_each_token(code: str, token: Token):
+    """Recognize single token."""
     tokens = list(Tokenizer(code))
     assert tokens == [
         token,
